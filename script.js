@@ -7,16 +7,10 @@ const Gameboard = (() => {
    
         let board = "";
         gameboard.forEach((block, index) => {
-        const divBlock = document.createElement('div')
-            divBlock.setAttribute('id', index)
-            divBlock.classList(div)
-            divBlock.innerHTML = block;
-
-            board += divBlock;
+            board += `<div class="block" id=block-${index}>${block}</div>`
           
         })
-        container.append(board)
-        console.log(board)
+        container.innerHTML = board
     }
     return {
         display,
@@ -34,11 +28,29 @@ const playerFactory = (name, mark) => {
 
 const Controller = (() => {
     let players = []
-    let currentIndex = 0;
+    let currentIndex;
     let gameOver = false
 
     const start = () => {
-        createPlayer
+         players = [
+            playerFactory(document.querySelector('#player-one').value, "X"),
+            playerFactory(document.querySelector('#player-two').value, "O")
+         ]
+         currentIndex = 0
+         gameOver = false;
+         Gameboard.display()
+
+    }
+    return {
+        start,
     }
 
 })()
+
+const start = document.querySelector('#start')
+
+start.addEventListener('click', () => {
+    Controller.start();
+    document.getElementById('form-container').style.display = `none`;
+    document.getElementById('score').style.display = `contents`;
+})
