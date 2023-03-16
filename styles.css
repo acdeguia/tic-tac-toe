@@ -1,17 +1,19 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 body {
-    background-color: #142531;
+    background-color: #F3EDE9;
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    grid-template-rows: 1fr 3fr 2fr;
    justify-items: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: relative;
 }
 
 h1, p {
-    color: #E4A06C;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #161419;
 }
 
 h1 {
@@ -29,26 +31,153 @@ letter-spacing: 0.185em;
 
 #container {
     grid-area: 2 / 1 / 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 18px;
+height: 136px;
+
+
 }
 
 #score {
     display: flex;
     padding: 0;
-    gap: 90px;
+    gap: 50px;
     grid-area: 3 / 1 / 4 / 4;
+    display: none;
 }
 
-.div {
-    border: 1px solid black;
-    height: 100px;
-    width: 100px;
+.block {
+
+    width: 136px;
+    height: 136px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #BBCED8;;
+    font-weight: 400;
+font-size: 90px;
 }
 
 .form-input {
     position: absolute;
-width: 483px;
-height: 365px;
-background: #799691;
-border-radius: 10px;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;width: 483px;
+    height: 365px;
+    background: #BBCED8;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
 
+.input-filed {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    letter-spacing: 0.185em;
+    font-size: 34px;
+}
+
+.form-input div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-style: normal;
+font-weight: 700;
+font-size: 34px;
+}
+
+input,
+button
+{
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+
+}
+
+input
+{
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* These elements are usually rendered a certain way by the browser */
+button
+{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.players {
+    background: #EDEDED;
+border-radius: 10px;
+width: 397px;
+height: 48px;
+
+font-size: 20px;
+letter-spacing: 0.185em;
+text-align: center;
+}
+
+input:focus {
+    outline: 0;
+}
+
+#start {
+    width: 258px;
+height: 59px;
+background-color: #BBCED8;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+
+position: absolute;
+top: 63%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-weight: 400;
+font-size: 34px;
+cursor: pointer;
+
+font-family: 'Arial';
+font-style: normal;
+font-weight: 400;
+font-size: 34px;
+line-height: 39px;
+/* identical to box height */
+
+letter-spacing: 0.185em;
+}
+
+#start:hover{
+    background-color: #F3EDE9;
+}
+
+.p1 {
+    color: #CE434C;
+}
+
+.p2 {
+    color: #4EA1B9;
+}
