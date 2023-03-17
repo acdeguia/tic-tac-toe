@@ -74,13 +74,16 @@ const Controller = (() => {
     return
     
       Gameboard.update(index, players[currentIndex].mark);
-      
+       currentIndex = currentIndex === 0 ? 1 : 0
     
     if(checkWinner(Gameboard.getGameboard(), players[currentIndex].mark)){
-      alert(`${players[currentIndex].name} won`)
+      document.querySelector("#message").innerHTML = `${players[currentIndex].name} won`
       gameOver = true
     }
-      currentIndex = currentIndex === 0 ? 1 : 0
+    // else if(checkTie(Gameboard.getGameboard())){
+    //   gameOver = true
+    // }
+     
   }
 
   const restart = () => {
@@ -88,6 +91,7 @@ const Controller = (() => {
       Gameboard.update(i, "");
     }
     Gameboard.display()
+    document.querySelector("#message").innerHTML = '';
   }
 
   return {
@@ -98,11 +102,9 @@ const Controller = (() => {
 })();
 
 
-restart.addEventListener("click", () => {
-  Controller.restart();
-})
 
-function checWinner(board){
+
+function checkWinner(board){
   const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -123,6 +125,10 @@ function checWinner(board){
     return false;
 }
 
+
+restart.addEventListener("click", () => {
+  Controller.restart();
+})
 
 start.addEventListener("click", () => {
   Controller.start();
