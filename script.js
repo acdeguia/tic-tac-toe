@@ -1,6 +1,8 @@
 const Gameboard = (() => {
   let gameboard = ["", "", "", "", "", "", "", "", ""];
 
+  const restart = document.createElement('button')
+
   const display = () => {
     const container = document.querySelector("#container");
 
@@ -19,6 +21,7 @@ const Gameboard = (() => {
     gameboard[index] = value;
     display();
   };
+
 
   const getGameboard = ()  => gameboard;
 
@@ -86,5 +89,5 @@ const start = document.querySelector("#start");
 start.addEventListener("click", () => {
   Controller.start();
   document.getElementById("form-container").style.display = `none`;
-  document.getElementById("score").style.display = `contents`;
+  document.getElementById("restart").style.display = `block`;
 });
