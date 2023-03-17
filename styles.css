@@ -20,7 +20,9 @@ h1 {
     font-weight: 700;
 font-size: 60px;
 grid-area: 1 / 1 / 2 / 4;
-
+letter-spacing: 0.185em;
+color: #161419;
+text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 p {
@@ -41,7 +43,6 @@ height: 136px;
 }
 
 #score {
-    display: flex;
     padding: 0;
     gap: 50px;
     grid-area: 3 / 1 / 4 / 4;
@@ -69,7 +70,7 @@ font-size: 90px;
     height: 365px;
     background: #BBCED8;
     border-radius: 10px;
-
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -146,10 +147,10 @@ input:focus {
 }
 
 #start {
-    width: 258px;
+    width: 200px;
 height: 59px;
 background-color: #BBCED8;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 
 position: absolute;
