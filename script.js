@@ -1,5 +1,5 @@
 const Gameboard = (() => {
-    let gameboard = ["X", "O", "O", "O", "X", "X", "O", "X", "X"]
+    let gameboard = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
     const display = () => {
         
@@ -11,6 +11,10 @@ const Gameboard = (() => {
           
         })
         container.innerHTML = board
+        const blocks = document.querySelectorAll(".block")
+        blocks.forEach((block) => {
+          block.addEventListener("click", Controller.handleClick)
+        })
     }
     return {
         display,
@@ -46,11 +50,15 @@ const Controller = (() => {
          document.querySelector(".p2").innerHTML = playerTwo.toUpperCase()
 
          Gameboard.display()
-
-        console.log(players)
     }
+
+    const handleClick = (event) => {
+      alert('hello')
+    }
+
     return {
         start,
+        handleClick,
     }
 
 })()
