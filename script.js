@@ -32,14 +32,22 @@ const Controller = (() => {
     let gameOver = false
 
     const start = () => {
+
+          const playerOne = document.querySelector('#player1').value
+          const playerTwo = document.querySelector('#player2').value
+
          players = [
-            playerFactory(document.querySelector('#player-one').value, "X"),
-            playerFactory(document.querySelector('#player-two').value, "O")
+            playerFactory(playerOne, "X"),
+            playerFactory(playerTwo, "O")
          ]
          currentIndex = 0
          gameOver = false;
+         document.querySelector(".p1").innerHTML = playerOne.toUpperCase()
+         document.querySelector(".p2").innerHTML = playerTwo.toUpperCase()
+
          Gameboard.display()
 
+        console.log(players)
     }
     return {
         start,
