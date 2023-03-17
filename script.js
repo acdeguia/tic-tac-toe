@@ -77,7 +77,7 @@ const Controller = (() => {
        currentIndex = currentIndex === 0 ? 1 : 0
     
     if(checkWinner(Gameboard.getGameboard(), players[currentIndex].mark)){
-      document.querySelector("#message").innerHTML = `${players[currentIndex].name} won`
+      document.querySelector("#message").innerHTML = `${players[currentIndex].name} won this round`
       gameOver = true
     }
     // else if(checkTie(Gameboard.getGameboard())){
