@@ -69,6 +69,7 @@ const Controller = (() => {
   };
 
   const handleClick = (event) => {
+
     let index = parseInt(event.target.id.split("-")[1]);
     if(Gameboard.getGameboard() [index] !== "")
     return
@@ -77,14 +78,19 @@ const Controller = (() => {
        currentIndex = currentIndex === 0 ? 1 : 0
     
     if(checkWinner(Gameboard.getGameboard(), players[currentIndex].mark)){
-      document.querySelector("#message").innerHTML = `${players[currentIndex].name} won this round`
+
+      if( players[currentIndex].name !== '' ){
+        document.querySelector("#message").innerHTML = `${players[currentIndex].name} won this round`
+      }else{
+        document.querySelector("#message").innerHTML = `player ${Number(currentIndex) + 1} won this round`
+      }
       gameOver = true
     }
     // else if(checkTie(Gameboard.getGameboard())){
     //   gameOver = true
     // }
-     
   }
+
 
   const restart = () => {
     for(let i = 0; i < 9; i++){
