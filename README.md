@@ -1,4 +1,4 @@
-# TOP: Tic-Tac-Toe project
+## TOP: Tic-Tac-Toe project
 
 ⟱⟱⟱
 <br />
